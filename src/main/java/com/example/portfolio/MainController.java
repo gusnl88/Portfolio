@@ -11,4 +11,8 @@ public class MainController {
     public String fistPage(){
        return "main";
     }
+    @GetMapping("/index.do")
+    public String index(){
+        return "index";
+    }
 }
