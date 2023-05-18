@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-</head>
 <style>
     @import url("https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap");
 
@@ -21,12 +20,12 @@
   }
 
   body{
-      background-image: url("/img/star3.png");
       /*background-size: cover; !* 이미지를 화면에 꽉 차도록 크기 조정 *!*/
       background-color: #000;
       font-family: "Signika Negative", sans-serif;
       overflow-x: hidden;
-      height: 6000px;
+      height: 100%;
+
   }
   .cover{
       width: 100vw;
@@ -47,15 +46,7 @@
       padding: 3rem 0;
       font-size: 5rem ;
   }
-  @media screen and (max-width:768px) {
-      body {
-          width: 100vw;
-          height: 100vh;
-          overflow-y: scroll;
-          overflow-x: hidden;
-      }
 
-  }
 li{
     color: #c3c3c3;
     font-weight: bold;
@@ -70,16 +61,20 @@ ul{
         transform: translateX(-50%);
         width: 100%;
         padding: 10px 0;
-        text-align: center;
+        text-align: start;
     }
     .navigate a {
         text-decoration: none;
         color: white;
+        font-size: 3vh;
     }
+
 </style>
+</head>
 <body>
+
     <nav class="navigate"><a style="text-decoration: none;" href="main.do"><h1>Home</h1></a></nav>
-<section >
+
 <div class="box"><h1>"안녕하세요,백엔드 개발자를 꿈꾸는<br> 김봉현입니다."</h1></div>
 <div class="box"><h1 style="color: #c3c3c3">개발자를 목표로 지내온 하루하루가 쌓여<br> 결국에는 그 꿈에 도달할 것이라 믿습니다.<br>
 아직 많이 부족하고, 더 노력해야 겠지만<br> 최선을 다해 목표를 이루도록 하겠습니다.</h1></div>
@@ -90,22 +85,25 @@ ul{
     <li><u><strong style="color: antiquewhite">DataBase-</strong></u> MySQL</li>
     <li><u><strong style="color: antiquewhite">FrameWork-</strong></u> Spring, MyBatis</li>
     <li><u><strong style="color: antiquewhite">Tools-</strong></u> IntelliJ,Eclipse, Visual Studio Code</li>
-</ul></div>
+</ul>
+</div>
     <div class="box"><h1>저는 이런 것을 배웠습니다.</h1>
     <ul>
         <li>에이콘아카데미(홍대)스마트 웹&앱을 활용한 iot통합 솔루션 개발자 과정</li>
     </ul>
     </div>
-</section>
+    <div class="box"></div>
 <section>
-
-<div class="cover">
-    <p class="first-parallel"></p>
-</div>
-<div class="cover">
-    <p class="second-parallel"></p>
-</div>
+    <div class="cover">
+        <p class="first-parallel"></p>
+    </div>
+    <div class="cover">
+        <p class="second-parallel"></p>
+    </div>
 </section>
+    <div class="box"></div>
+
+
 <script>
     const pTag1=document.querySelector('.first-parallel')
     const pTag2=document.querySelector('.second-parallel')
