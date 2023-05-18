@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap");
+
+  div.box{
+      margin-top: 1000px;
+      color: white;
+      text-align: center;
+      opacity: 0;
+      /*transform: rotate(-360deg);*/
+      transition:all 2s ;
+  }
+  div.box h1{
+      font-size: 3vh;
+
+  }
+
+  body{
+      background-image: url("/img/star3.png");
+      /*background-size: cover; !* 이미지를 화면에 꽉 차도록 크기 조정 *!*/
+      background-color: #000;
+      font-family: "Signika Negative", sans-serif;
+      overflow-x: hidden;
+      height: 6000px;
+  }
+  .cover{
+      width: 100vw;
+      display: flex;
+  }
+  .cover:nth-child(1){
+      transform: rotate(-2deg);
+      color: white;
+  }
+  .cover:nth-child(2){
+      transform: rotate(2deg);
+      color: white;
+      justify-content: flex-end;
+
+  }
+  p{
+      display: flex;
+      padding: 3rem 0;
+      font-size: 5rem ;
+  }
+  @media screen and (max-width:768px) {
+      body {
+          width: 100vw;
+          height: 100vh;
+          overflow-y: scroll;
+          overflow-x: hidden;
+      }
+
+  }
+li{
+    color: #c3c3c3;
+    font-weight: bold;
+}
+ul{
+    list-style: none;
+}
+    .navigate {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+    }
+    .navigate a {
+        text-decoration: none;
+        color: white;
+    }
+</style>
+<body>
+    <nav class="navigate"><a style="text-decoration: none;" href="main.do"><h1>Home</h1></a></nav>
+<section >
+<div class="box"><h1>"안녕하세요,백엔드 개발자를 꿈꾸는<br> 김봉현입니다."</h1></div>
+<div class="box"><h1 style="color: #c3c3c3">개발자를 목표로 지내온 하루하루가 쌓여<br> 결국에는 그 꿈에 도달할 것이라 믿습니다.<br>
+아직 많이 부족하고, 더 노력해야 겠지만<br> 최선을 다해 목표를 이루도록 하겠습니다.</h1></div>
+<div class="box"><h1>저는 이런것을 다룰줄 압니다.</h1>
+<ul >
+    <li><u><strong style="color: antiquewhite">Languages-</strong></u> Java,Javascript,Node.JS,Express, JSP, JavaScript(jQuery), HTML, CSS</li>
+    <li><u><strong style="color: antiquewhite">OS-</strong></u> Windows</li>
+    <li><u><strong style="color: antiquewhite">DataBase-</strong></u> MySQL</li>
+    <li><u><strong style="color: antiquewhite">FrameWork-</strong></u> Spring, MyBatis</li>
+    <li><u><strong style="color: antiquewhite">Tools-</strong></u> IntelliJ,Eclipse, Visual Studio Code</li>
+</ul></div>
+    <div class="box"><h1>저는 이런 것을 배웠습니다.</h1>
+    <ul>
+        <li>에이콘아카데미(홍대)스마트 웹&앱을 활용한 iot통합 솔루션 개발자 과정</li>
+    </ul>
+    </div>
+</section>
+<section>
+
+<div class="cover">
+    <p class="first-parallel"></p>
+</div>
+<div class="cover">
+    <p class="second-parallel"></p>
+</div>
+</section>
+<script>
+    const pTag1=document.querySelector('.first-parallel')
+    const pTag2=document.querySelector('.second-parallel')
+
+    const textArr1 = 'Hello, Im preparing a developer.Please excuse me if I lack in any way.'.split(' ')
+    const textArr2 = 'I will work hard to become a developer who takes a step forward.'.split(' ')
+    let count1 = 0
+    let count2 = 0
+    function initTexts(element, textArray) {
+        textArray.push(...textArray)
+        for (let i = 0; i < textArray.length; i++) {
+            element.innerText += `${textArray[i]}\u00A0`
+        }
+    }
+    initTexts(pTag1, textArr1)
+    initTexts(pTag2, textArr2)
+    function marqueeText(count, element, direction) {
+        if (count > element.scrollWidth / 2) {
+            element.style.transform = `translate3d(0, 0, 0)`
+            count = 0
+        }
+        element.style.transform = `translate3d(${direction * count}px, 0, 0)`
+
+        return count
+    }
+
+    function animate() {
+        count1++
+        count2++
+
+        count1 = marqueeText(count1, pTag1, -1)
+        count2 = marqueeText(count2, pTag2, 1)
+
+
+        window.requestAnimationFrame(animate)
+    }
+    function scrollHandler() {
+        count1 += 15
+        count2 += 15
+    }
+
+    window.addEventListener('scroll', scrollHandler)
+    animate()
+   let observer= new IntersectionObserver((e)=>{
+       e.forEach((box)=>{
+           if (box.isIntersecting){
+           box.target.style.opacity=1;
+           // box.target.style.transform='rotate(0deg)';
+           }
+           else {
+               box.target.style.opacity=0;
+               // box.target.style.transform='rotate(-360deg)';
+           }
+       })
+
+   })
+
+   let div = document.querySelectorAll('div')
+   observer.observe(div[0]) //html 요소가화면에 등장하는지 감시해줌
+   observer.observe(div[1])
+   observer.observe(div[2])
+   observer.observe(div[3])
+</script>
+</body>
+</html>

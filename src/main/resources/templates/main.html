@@ -16,7 +16,9 @@
       margin: 0;
       padding: 0;
     }
-
+    html{
+      scroll-behavior: smooth;
+    }
     body {
       font-family: "Signika Negative", sans-serif;
       letter-spacing: 0.04em;
@@ -129,7 +131,9 @@
 
     /* 여기까지 footer */
     @media screen and (max-width:1100px) {
-
+html{
+  scroll-behavior: smooth;
+}
       .logo {
         position: relative;
         margin-left: 10px;
@@ -137,7 +141,7 @@
 
       }
       .logo span{
-        font-size: 12px;
+        font-size: 20px;
       }
 
 
@@ -150,22 +154,20 @@
 
       .menu {
         position: relative;
-
         justify-content: center;
         display: none;
       }
 
       .icons li {
         margin: 0;
-        font-size: 10px;
+        font-size: 20px;
       }
 
       .menu.active {
-        font-size: 10px;
+        margin-top: -15px;
+        margin-bottom: -10px;
+        font-size: 15px;
         display: flex;
-
-
-
       }
 
       .logo.active {
@@ -193,7 +195,7 @@
 
 <div class="bar1"></div>
 <nav class="navigater">
-  <a href="index.do">
+  <a href="/index.html">
   <div  class="logo" >
 
     <span style="--i:1">K</span>
@@ -222,13 +224,15 @@
 
 
   <ul class="icons">
-    <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-    <li><a href="#" class="toggleBtn"><i class="fa-solid fa-align-right"></i></a></li>
+<!--    <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>-->
+    <li><a class="toggleBtn"><i class="fa-solid fa-align-right"></i></a></li>
   </ul>
 </nav>
 
-<div class="section">
+<div class="section" >
+  <a href="profile.do">
   <h1>Scroll Down</h1>
+  </a>
 </div>
 
 <div class="section bg1" id="about">
