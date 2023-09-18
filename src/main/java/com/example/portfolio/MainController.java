@@ -9,7 +9,7 @@ public class MainController {
 
     @GetMapping("/main.do")
     public String fistPage(){
-       return "main";
+       return "/main/main";
     }
     @GetMapping("/index.do")
     public String index(){
